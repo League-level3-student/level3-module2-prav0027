@@ -14,7 +14,6 @@ public class MergeSorter extends Sorter {
 	void sort(int[] array, SortingVisualizer display) {
 		// 20. call the mergeSort method with 0 and the length of the array minus one
 		mergeSort(array, 0, array.length - 1, display);
-		System.out.println("done");
 	}
 
 	private void mergeSort(int[] array, int low, int high, SortingVisualizer display) {
@@ -35,7 +34,6 @@ public class MergeSorter extends Sorter {
 			// but only the elements from low to high inclusive
 			for (int a = low; a <= high; a++) {
 				tempArray[a] = array[a];
-				display.updateDisplay();
 			}
 			// 7. create three integers called i, j, and k and
 			// set them equal to low, middle + 1, and low respectively
@@ -45,7 +43,6 @@ public class MergeSorter extends Sorter {
 			// 8. while i is less than or equal to middle
 			// and j is less than or equal to high
 			while (i <= middle && j <= high) {
-				display.updateDisplay();
 				// 9. if temp array at i is less than or equal
 				// to temp array at j
 				if (tempArray[i] <= tempArray[j]) {
@@ -53,7 +50,6 @@ public class MergeSorter extends Sorter {
 					array[k] = tempArray[i];
 					// 11. increase i by 1
 					i++;
-					display.updateDisplay();
 				}
 				// 13. else
 				else {
@@ -61,10 +57,9 @@ public class MergeSorter extends Sorter {
 					array[k] = tempArray[j];
 					// 15. increase j by 1
 					j++;
-					// 16. increase k by 1
-					k++;
-					display.updateDisplay();
 				}
+				// 16. increase k by 1	
+				k++;
 			}
 			// 17. make a while loop that runs while i is less than or equal to middle
 			while (i <= middle) {
@@ -73,7 +68,6 @@ public class MergeSorter extends Sorter {
 				// 19. increase k and i by 1
 				k++;
 				i++;
-				display.updateDisplay();
 			}
 
 		}
